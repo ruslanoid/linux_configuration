@@ -1,0 +1,117 @@
+################################################################################
+## UBUNTU ######################################################################
+
+## to mount smb shared folders:
+1. sudo apt-get install smbfs
+2. create the file ~/.smbcredentials
+3. edit it to have
+    username=MyUsername
+    password=MyPassword
+4.  sudo chown .smbcredentials
+    sudo chmod 600 ~/.smbcredentials
+    sudo mkdir -p /net/homes/ruslanp
+    [//network_location] /net/homes/ruslanp cifs user,exec,credentials=/home/ruslanp/.smbcredentials,iocharset=utf8,file_mode=0777,dir_mode=0777,uid=ruslanp,gid=users 0 0
+
+# troubleshoot wifi problems:
+    sudo rfkill list all
+    sudo rfkill unblock all
+    sudo rfkill list all
+    sudo ifconfig wlan0 up
+
+#to turn off aport on ubuntu 12.04:
+    gksu gedit /etc/default/apport
+
+#wifi managing on Ubuntu:
+
+    ##/etc/network/interfaces:
+            allow-hotplug wlan0
+            iface wlan0 inet dhcp
+                wpa-ssid <SSID>
+                wpa-psk  <PASSWORD>
+
+    ## or in case you need to have multiple entries:
+            allow-hotplug wlan0
+            iface wlan0 inet dhcp
+            iface work inet dhcp
+                wpa-ssid <SSID_WORK>
+                wpa-psk  <PASSWORD_WORK>
+
+            iface home inet dhcp
+                wpa-ssid <SSID_HOME>
+                wpa-psk  <PASSWORD_HOME>
+
+    ### then to use either:
+            ifup wlan0=work
+        or
+            ifup wlan0=home
+
+    ## to turn off:
+            ifdown wla
+
+################################################################################
+## BASH ########################################################################
+
+# regex is greedy by default - returning the max it can find  (A.*c to AbcAbcA matches AbcAbc rather than the shorter Abc)
+    to make it not greedy: (A.*?c will find the shortest match possible)
+
+# while read line do; bla; vla; done < "/etc/hosts" - to read line from file => read X - will wait for user's input
+
+# bonus q #5:
+    for i in `seq 255`; do ping -c 1 ${segment}$i > /dev/null && echo "${segment}$i is taken" || echo "${segment}$i is free"; done
+
+# for loop example:
+    for i in {1..15};do command $i;done
+
+# when sending process to background by ctrl+z, need to run bg to make it run
+    to bring back can use fg [%id]
+#running process in background and closing the window
+    ctrl+z
+    disown -h %1
+    bg 1
+    #alternative way:
+    gedit & exit
+
+# linux course / shay berman
+    github.com/shay-berman
+
+# man -k "^ls" - to find all the mans that begin with ls (regex rules!!!)
+
+# ctrl+a -> ctrl+k to clear the whole line
+
+# regex for comments and white spaces:
+    "^#|^\s*$"
+    or
+    [[:blank:]]
+
+# regex for IP
+    [0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}
+
+# under /proc/<pid>/fd you can see the 0,1,2 redirected streams of process IO
+
+# echo "HPUX%Solaris%Linux" | awk –F% '{print $3}'
+
+# three=`expr 1 + 2` == $((1 + 2))  - COOL!!!
+
+# how to pass options:
+    # http://linux.about.com/od/Bash_Scripting_Solutions/a/How-To-Pass-Arguments-To-A-Bash-Script.htm
+    while getopts u:d:p:f: option
+    do
+            case "${option}"
+            in
+                    u) USER=${OPTARG};;
+                    d) DATE=${OPTARG};;
+                    p) PRODUCT=${OPTARG};;
+                    f) FORMAT=$OPTARG;;
+            esac
+    done
+
+################################################################################
+## VIM #########################################################################
+
+# in vi:
+:set nu - to view line numbers
+
+################################################################################
+## git #########################################################################
+
+# use .git/info/exclude to exclude files not via .gitignore

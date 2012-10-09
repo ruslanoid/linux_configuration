@@ -1,0 +1,29 @@
+[user]
+        #name = Ruslan Portnoy
+        #email = ruslanp@il.ibm.com
+
+[color]
+        ui = auto
+        diff = auto
+        status = auto
+        branch = auto
+[core]
+    ignorecase = true
+[push]
+    default = tracking
+[merge]
+    keepBackup = false
+[diff]
+    mnemonicprefix = true
+
+# Useful aliases
+[alias]
+    trash = !git add . && git commit -m 'trash' && git reset --hard HEAD^
+    propose = !git push origin +HEAD:$USER/proposed/$(git-symbolic-ref HEAD | sed 's/^refs\\/heads\\///')
+    unpropose = !git push origin +:$USER/proposed/$(git-symbolic-ref HEAD | sed 's/^refs\\/heads\\///')
+    integrate = !git push origin +HEAD:$USER/integrate/$(git-symbolic-ref HEAD | sed 's/^refs\\/heads\\///')
+    unintegrate = !git push origin +:$USER/integrate/$(git-symbolic-ref HEAD | sed 's/^refs\\/heads\\///')
+
+    # Provide a nice, compact format for the git log (use with `git lg`)
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%Creset %Cred[%an]%Creset' --abbrev-commit --date=relative
+

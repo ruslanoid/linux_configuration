@@ -1,0 +1,104 @@
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
+    else
+        color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;36m\]\h\[\033[00m\]\[\033[01;31m\]$(git branch 2>/dev/null|grep -e ^* | tr "*" ":" | tr -d " ")\[\033[00m\]:\[\033[01;33m\]\w\[\033[00m\]> '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -halF'
+alias la='ls -A'
+alias l='ls -CF'
+alias cd..='cd ..'
+#alias cdtt='cd ~/work/v11/tlib'
+#alias cdt='cd ~/work/v11/tests'
+#alias cdx='cd ~/work/xiv-core'
+#alias cdxx='cd ~/work/p11'
+#alias cdp11='cd /local/ruslanp/p11.0'
+alias run_one_scsi_cmd=/a/config/hosts/bin-per-kernel/`uname -r`/run_one_scsi_cmd
+alias gs='git status'
+alias gss='git status -s'
+
+#alias checkout='$HOME/work/investigate/checkout.py'
+#alias ch='$HOME/work/investigate/checkout.py'
+#alias inv='$HOME/work/investigate/investigate.py'
+
+# xenv stuff
+#alias x=~/work/investigate/xenv.py
+#alias rt='run_tests -s `cat ~/.xsystem`'
+#alias m='ssh `cat ~/.xsystem`'
+#alias s='screen -x'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+
+#export PYTHONPATH=$HOME/work/python/
+#export PYTHONSTARTUP=$HOME/work/python/startup.py
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+if [ -t 0 ]; then
+    stty stop undef
+    stty start undef
+fi
+
+
+# User specific aliases and function
+#export PATH=/a/home/ruslanp/work/tests:/a/home/ruslanp/work/p4v-2010.1.276058/bin:/a/home/ruslanp/work/investigate:$PATH
+
+#git
+. /usr/local/etc/git-completion.bash
+# PS1='\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w$(__git_ps1 " (%s)")\[\033[00m\]\$ '
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+
