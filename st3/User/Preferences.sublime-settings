@@ -1,0 +1,86 @@
+{
+	"always_prompt_for_file_reload": false,
+	"auto_complete_delay": 500,
+	"bold_folder_labels": false,
+	"caret_extra_width": 1,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/Cheerfully Dark.tmTheme",
+	"copy_with_empty_selection": false,
+	"dc_always_show_minimap_viewport": true,
+	"dc_autohide_scrollbar": false,
+	"dc_bold_folder_labels": false,
+	"dc_hide_btn_close_tab": false,
+	"dc_hide_file_icons": false,
+	"dc_hide_folders": false,
+	"dc_hide_group_icons": false,
+	"dc_hide_scrollbars": false,
+	"dc_mouse_wheel_switches_tabs": false,
+	"dc_use_folder_icon1": false,
+	"dc_use_folder_icon2": true,
+	"dc_use_folder_icon3": false,
+	"dc_use_group_icon1": false,
+	"dc_use_group_icon2": false,
+	"dc_use_group_icon3": false,
+	"dc_use_group_icon4": true,
+	"dc_use_soda_search_icons": false,
+	"default_line_ending": "unix",
+	"draw_white_space": "selection",
+	"fade_fold_buttons": true,
+	"fade_inactive_panes": false,
+	"find_selected_text": true,
+	"font_face": "Bitstream Vera Sans Mono",
+	"font_size": 10,
+	"git_gutter_live_mode": true,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"NamedMark",
+		"WhoCalled Function Finder",
+		"Vintage",
+		"Terminal"
+	],
+	"ignored_words":
+	[
+		"defragmentation",
+		"filesystem",
+		"fsck",
+		"ganesha",
+		"nas",
+		"redist",
+		"ssd"
+	],
+	"indent_guide_options":
+	[
+		"draw_active",
+		"draw_normal"
+	],
+	"indent_to_bracket": true,
+	"numix_file_icons": true,
+	"numix_folder_icons": false,
+	"numix_sidebar_tree_xsmall": true,
+	"numix_xsmall_tabs": true,
+	"overlay_scroll_bars": "enabled",
+	"pep8": false,
+	"pyflakes_ignore":
+	[
+		"xpdb"
+	],
+	"python_interpreter_path": "/usr/bin/python",
+	"rulers":
+	[
+		120
+	],
+	"show_encoding": true,
+	"show_line_endings": true,
+	"show_panel_on_build": false,
+	"soda_classic_tabs": false,
+	"soda_file_icons": true,
+	"soda_folder_icons": false,
+	"tab_size": 4,
+	"tabs_small": true,
+	"theme": "preap.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_automatic_white_space": true,
+	"trim_trailing_white_space_on_save": true
+}

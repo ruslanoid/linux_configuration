@@ -1,0 +1,32 @@
+{
+    "anaconda_gutter_marks": true,
+    "anaconda_linting": true,
+    "anaconda_linter_mark_style": "none",
+
+    /*
+
+        If anaconda_gutter_marks is true, this determines what theme is used.
+        Theme 'basic' only adds dots and circles to gutter.
+
+        Other available themes are 'alpha', 'bright', 'dark', 'hard' and
+        'simple'. To see icons that will be used for each theme check
+        gutter_icon_themes folder in Anaconda package.
+    */
+    "anaconda_gutter_theme": "simple",
+    "pep8_max_line_length": 120,
+        /*
+        If complete_parameters is true, anaconda will add function and class
+        parameters to its completions.
+
+        If complete_all_parameters is true, it will add all the possible
+        parameters, if it's false, it will add only required parameters
+    */
+    "complete_parameters": true,
+    "complete_all_parameters": false,
+
+    /*
+        If you set the following option as true, anaconda will display the
+        signatures of the methods you are using while typying
+    */
+    "display_signatures": true,
+}

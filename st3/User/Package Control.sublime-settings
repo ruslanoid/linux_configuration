@@ -1,0 +1,45 @@
+{
+	"in_process_packages":
+	[
+	],
+	"install_prereleases": false,
+	"installed_packages":
+	[
+		"Alignment",
+		"All Autocomplete",
+		"Anaconda",
+		"AutoDocstring",
+		"BracketHighlighter",
+		"CheerfullyDark",
+		"Color Scheme - Dusk",
+		"Copy Relative Path",
+		"Dayle Rees Color Schemes",
+		"DocPy",
+		"Future Funk - Color Scheme",
+		"Git",
+		"GitGutter",
+		"Github Tools",
+		"HighlightWords",
+		"HTMLBeautify",
+		"IntelliDocs",
+		"Markdown Extended",
+		"Material Color Scheme",
+		"NamedMark",
+		"Numix Theme",
+		"Package Control",
+		"Pastel Paws Color Scheme",
+		"Preap",
+		"Review Myself",
+		"Schemr",
+		"SideBarEnhancements",
+		"Soulburn Color Scheme",
+		"Tab Filter",
+		"Terminal",
+		"Terminality",
+		"Theme - DC",
+		"Theme - Midnight",
+		"Theme - Numix",
+		"Theme - Soda",
+		"WhoCalled Function Finder"
+	]
+}

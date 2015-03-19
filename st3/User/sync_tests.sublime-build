@@ -1,0 +1,4 @@
+{
+    "cmd": ["/bin/sync_tests"],
+    "shell": "true"
+}

@@ -1,0 +1,76 @@
+[
+    { "keys": ["super+f3"], "command": "goto_definition" },
+    { "keys": ["f1"], "command": "goto_definition" },
+    { "keys": ["shift+f1"], "command": "who_called", "args": {"mode": "call"} },
+    { "keys": ["f2"], "command": "intelli_docs" },
+    {
+        "keys": ["f8"],
+        "command": "toggle_white_space"
+    },
+    { "keys": ["shift+alt+p"],
+        "command": "tab_filter"
+    },
+    {
+        "keys": ["ctrl+alt+z"],
+        "command": "alignment"
+    },
+
+    {
+        "keys": ["ctrl+alt+g"],
+        "command": "anaconda_goto"
+    },
+
+    {
+        "keys": ["ctrl+alt+f"],
+        "command": "anaconda_find_usages"
+    },
+
+    {
+        "keys": ["ctrl+alt+d"],
+        "command": "anaconda_doc"
+    },
+
+    // {
+    //     "keys": ["ctrl+alt+shift+s"],
+    //     "command": "set_setting",
+    //     "args":
+    //     {
+    //         "setting": "color_scheme",
+    //         "value": "Packages/Color Scheme - Default/Monokai.tmTheme"
+    //     }
+    // },
+
+    // {
+    //     "keys": ["super+ctrl+alt+left"],
+    //     "command": "navigation_history_back"
+    // },
+
+    // {
+    //     "keys": ["super+ctrl+alt+right"],
+    //     "command": "navigation_history_forward"
+    // },
+
+    // {
+    //     "keys": ["ctrl+alt+i"],
+    //     "command": "igor_replace",
+    //     "context":[ { "key": "selector", "operator": "equal", "operand": "source.python" } ]
+    // },
+
+    // {
+    //   "keys": ["super+f3"],
+    //   "command": "sublime_python_goto_word"
+    // },
+    // {
+    //   "keys": ["ctrl+shift+r"],
+    //   "command": "sublime_python_goto_dialog"
+    // },
+    // {
+    //   "keys": ["ctrl+alt+shift+r"],
+    //   "command": "sublime_python_scan"
+    // }
+
+    // Toggle WhoCalled
+  { "keys": ["alt+l"], "command": "who_called", "args": {"mode": "def"} },
+  { "keys": ["shift+alt+l"], "command": "who_called", "args": {"mode": "call"} }
+
+]

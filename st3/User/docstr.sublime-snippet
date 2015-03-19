@@ -1,0 +1,19 @@
+<snippet>
+  <content><![CDATA[
+  """
+  ${1:Description goes here.}
+
+  Args:
+      ${2:Args go here.}
+  Kwargs:
+      ${3:Kwargs go here.}
+  Returns:
+      ${4:Return value/s of the function go here.}
+  Raises:
+      ${5:Possible raised exception by the function go here.}
+  """
+]]></content>
+  <tabTrigger>docstr</tabTrigger>
+  <description>function docstring placeholder</description>
+  <scope>source.python</scope>
+</snippet>

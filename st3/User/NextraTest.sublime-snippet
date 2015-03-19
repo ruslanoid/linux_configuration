@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[
+from test_utils import *
+
+class ${1:Test}(NextraTest):
+    AUTHOR      = "${5:author}"
+    KEYWORDS    = ["${2:test, test, test}"]
+    DESCRIPTION = "${3:test test test}"
+    COVERAGE    = ["${4:test coverage}"]
+    PARAMETERS  = dict(interactive=True)
+    PRIORITY    = 1
+    COMPLEXITY  = 1
+    # FLAVORS   = dict()
+
+    def run(self):
+        if self.config.interactive:
+            self.interactiveSession()
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>test</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>

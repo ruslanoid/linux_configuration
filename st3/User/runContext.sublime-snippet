@@ -1,0 +1,17 @@
+<snippet>
+    <content><![CDATA[
+@contextmanager
+def runContext(self):
+    with super(${1:ClassName}, self).runContext(): #maintaining whatever is done in super's runContext
+        try:
+            ${2:# insert initialization/prerequisite steps here}
+            yield
+        finally:
+            ${3:# insert cleanup steps here
+            pass}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>rc</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.python</scope>
+</snippet>
