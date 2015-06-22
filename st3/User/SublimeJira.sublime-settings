@@ -1,6 +1,6 @@
 {
-  "jira_server": "https://jira.xiv.ibm.com",
-  "jira_login": "ruslanp@il.ibm.com",
-  "jira_password": "Nexus!@34",
-  "jira_default_project": "TSSC"
+  "jira_server": "...",
+  "jira_login": "...",
+  "jira_password": "...",
+  "jira_default_project": "..."
 }
